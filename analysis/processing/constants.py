@@ -5,7 +5,7 @@ ONTARIO_CITIES = [
     'merlin', 'milton', 'mississauga', 'morrisburg', 'newmarket', 'north bay', 
     'oakville', 'oshawa', 'ottawa central', 'ottawa downtown', 'parry sound', 
     'petawawa', 'peterborough', 'port stanley', 'sarnia', 'sault ste. marie', 
-    'st. catharines', 'stouffville', 'sudbury', 'thunder bay', 'thunder bay???', 
+    'st. catharines', 'stouffville', 'sudbury', 'thunder bay', # 'thunder bay???', 
     'tiverton', 'toronto downtown', 'toronto east', 'toronto north', 
     'toronto west', 'windsor downtown', 'windsor west',
 ]
