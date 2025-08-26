@@ -1,2 +1,33 @@
-__pycache__
-.ipynb_checkpoints
+# Node / Svelte
+node_modules/
+.svelte-kit/
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Python
+__pycache__/
+
+# Jupyter / Analysis
+.ipynb_checkpoints/
+*.ipynb.json
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
