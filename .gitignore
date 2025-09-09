@@ -9,6 +9,8 @@ vite.config.ts.timestamp-*
 # Python
 __pycache__/
 
+data/raw
+
 # Jupyter / Analysis
 .ipynb_checkpoints/
 *.ipynb.json
