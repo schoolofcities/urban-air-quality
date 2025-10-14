@@ -1,9 +1,13 @@
 <script>
+    import aqhi_7plus from '$lib/data/federal_num_days/aqhi_7plus.json';
+    import aqhi_11 from '$lib/data/federal_num_days/aqhi_11plus.json';
+    import aqhi_plus_7plus from '$lib/data/federal_num_days/aqhi_plus_7plus.json';
+    import aqhi_plus_11 from '$lib/data/federal_num_days/aqhi_plus_11plus.json';
+    import pm25_55_5plus from '$lib/data/federal_num_days/pm25_55_5plus.json';
+    import pm25_250_5plus from '$lib/data/federal_num_days/pm25_250_5plus.json';
+
     import ButtonGroup from '$lib/ButtonGroup.svelte';
-    
-    let airQualityMeasure = $state('AQHI');
-    let threshold = $state('7+');
-    
+
     const airQualityOptions = [
         { value: 'AQHI', label: 'AQHI' },
         { value: 'AQHI+', label: 'AQHI+' },
@@ -19,6 +23,24 @@
         { value: '55.5+', label: 'Unhealthy and Hazardous (55.5+)' },
         { value: '250.5+', label: 'Hazardous (250.5+)' }
     ];
+
+    const federalNumDaysData = {
+        'AQHI_7+': aqhi_7plus,
+        'AQHI_11': aqhi_11,
+        'AQHI+_7+': aqhi_plus_7plus,
+        'AQHI+_11': aqhi_plus_11,
+        'PM2.5_55.5+': pm25_55_5plus,
+        'PM2.5_250.5+': pm25_250_5plus
+    };
+
+    let airQualityMeasure = $state('AQHI');
+    let threshold = $state('7+');
+    let currentAirQualityData = $state(aqhi_7plus);
+    
+    function updateCurrentData() {
+        const key = `${airQualityMeasure}_${threshold}`;
+        currentAirQualityData = federalNumDaysData[key] || null;
+    }
     
     function airQualityMeasureSelect(value) {
         airQualityMeasure = value;
@@ -28,10 +50,12 @@
         } else {
             threshold = '7+';
         }
+        updateCurrentData();
     }
 
     function thresholdSelect(value) {
         threshold = value;
+        updateCurrentData();
     }
 </script>
 
