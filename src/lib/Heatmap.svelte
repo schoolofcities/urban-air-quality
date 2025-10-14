@@ -1,13 +1,13 @@
 <script>
     let { data = {}, colors = [], breakpoints = [] } = $props();
 
-    // Extract years dynamically from the data
-    let years = $derived(data && Object.keys(data).length > 0 
+    // Extract columns dynamically from the data
+    let columns = $derived(data && Object.keys(data).length > 0 
         ? Object.keys(Object.values(data)[0]).sort()
         : []);
 
-    // Extract cities
-    let cities = $derived(Object.keys(data || {}));
+    // Extract rows
+    let rows = $derived(Object.keys(data || {}));
 
     // Function to get color based on value and breakpoints
     function getColor(value) {
@@ -24,15 +24,15 @@
 
 <div class="heatmap-container">
     <div class="heatmap">
-        {#each cities as city}
+        {#each rows as row}
             <div class="heatmap-row">
-                <div class="city-label">{city}</div>
-                <div class="year-cells">
-                    {#each years as year}
+                <div class="row-label">{row}</div>
+                <div class="column-cells">
+                    {#each columns as column}
                         <div 
                             class="cell"
-                            style="background-color: {getColor(data[city][year])}"
-                            title="{city} {year}: {data[city][year] ?? 'No data'}"
+                            style="background-color: {getColor(data[row][column])}"
+                            title="{row} {column}: {data[row][column] ?? 'No data'}"
                         ></div>
                     {/each}
                 </div>
@@ -60,7 +60,7 @@
         margin-bottom: 1px;
     }
 
-    .city-label {
+    .row-label {
         font-size: 12px;
         font-family: TradeGothicBold, sans-serif;
         color: var(--brandGray90);
@@ -73,7 +73,7 @@
         text-overflow: ellipsis;
     }
 
-    .year-cells {
+    .column-cells {
         display: flex;
         gap: 1px;
         flex: 1;
@@ -94,7 +94,7 @@
 
     /* Mobile responsiveness */
     @media (max-width: 768px) {
-        .city-label {
+        .row-label {
             font-size: 10px;
             min-width: 80px;
             max-width: 80px;
@@ -108,7 +108,7 @@
     }
 
     @media (max-width: 350px) {
-        .city-label {
+        .row-label {
             font-size: 8px;
             min-width: 60px;
             max-width: 60px;

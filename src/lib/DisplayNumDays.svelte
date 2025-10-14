@@ -8,6 +8,7 @@
 
     import ButtonGroup from '$lib/ButtonGroup.svelte';
     import Heatmap from '$lib/Heatmap.svelte';
+    import LegendGraduatedBreakpoints from '$lib/LegendGraduatedBreakpoints.svelte';
     import { GRADUATED_COLORS, AIR_MEASURE_NUM_DAYS_BREAKS } from '$lib/constants.js';
 
     const airQualityOptions = [
@@ -74,6 +75,12 @@
         bind:selectedValue={threshold}
         onSelect={thresholdSelect}
         label="Select threshold level:"
+    />
+
+    <LegendGraduatedBreakpoints 
+        colors={GRADUATED_COLORS}
+        breakpoints={AIR_MEASURE_NUM_DAYS_BREAKS[airQualityMeasure]}
+        title="Number of days per year"
     />
 
     <Heatmap 
