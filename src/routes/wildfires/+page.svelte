@@ -6,7 +6,9 @@
 	import AuthorDate from '$lib/AuthorDate.svelte';
 	import ImageSingle from '$lib/ImageSingle.svelte';
 	import Footer from '$lib/Footer.svelte';
-
+	
+	import DisplayNumDays from '$lib/DisplayNumDays.svelte';
+	
 	import Footnote from '$lib/Footnote.svelte';
 	import Footnotes from '$lib/Footnotes.svelte';
 	import { createFootnoteStore } from '$lib/footnoteUtils';
@@ -67,6 +69,8 @@
 			authors="<a href='' target='_blank'>Research Team</a>"
 			date="January 2025"
 		/>
+
+		<DisplayNumDays />
 
 		<p>
 			Wildfires have become an increasingly significant threat to urban air quality, with smoke plumes traveling hundreds of miles from fire sources to affect metropolitan areas. This analysis examines the relationship between wildfire activity and air pollution levels in urban environments.<Footnote id={addFootnote(fns[0])} />
