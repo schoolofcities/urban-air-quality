@@ -7,6 +7,8 @@
     import pm25_250_5plus from '$lib/data/federal_num_days/pm25_250_5plus.json';
 
     import ButtonGroup from '$lib/ButtonGroup.svelte';
+    import Heatmap from '$lib/Heatmap.svelte';
+    import { GRADUATED_COLORS, AIR_MEASURE_NUM_DAYS_BREAKS } from '$lib/constants.js';
 
     const airQualityOptions = [
         { value: 'AQHI', label: 'AQHI' },
@@ -72,5 +74,11 @@
         bind:selectedValue={threshold}
         onSelect={thresholdSelect}
         label="Select threshold level:"
+    />
+
+    <Heatmap 
+        data={currentAirQualityData}
+        colors={GRADUATED_COLORS}
+        breakpoints={AIR_MEASURE_NUM_DAYS_BREAKS[airQualityMeasure]}
     />
 </div>
