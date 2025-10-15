@@ -4,7 +4,7 @@
     import aqhi_plus_7plus from '$lib/data/federal_num_days/aqhi_plus_7plus.json';
     import aqhi_plus_11 from '$lib/data/federal_num_days/aqhi_plus_11plus.json';
     import pm25_55_5plus from '$lib/data/federal_num_days/pm25_55_5plus.json';
-    import pm25_250_5plus from '$lib/data/federal_num_days/pm25_250_5plus.json';
+    import pm25_225_5plus from '$lib/data/federal_num_days/pm25_225_5plus.json';
 
     import ButtonGroup from '$lib/ButtonGroup.svelte';
     import Heatmap from '$lib/Heatmap.svelte';
@@ -24,7 +24,7 @@
 
     const pm25ThresholdOptions = [
         { value: '55.5+', label: 'Unhealthy and Hazardous (55.5+)' },
-        { value: '250.5+', label: 'Hazardous (250.5+)' }
+        { value: '225.5+', label: 'Hazardous (225.5+)' }
     ];
 
     const federalNumDaysData = {
@@ -33,7 +33,7 @@
         'AQHI+_7+': aqhi_plus_7plus,
         'AQHI+_11': aqhi_plus_11,
         'PM2.5_55.5+': pm25_55_5plus,
-        'PM2.5_250.5+': pm25_250_5plus
+        'PM2.5_225.5+': pm25_225_5plus
     };
 
     let airQualityMeasure = $state('AQHI');
