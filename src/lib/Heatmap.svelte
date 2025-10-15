@@ -1,5 +1,10 @@
 <script>
-    let { data = {}, colors = [], breakpoints = [] } = $props();
+    let { 
+        data = {}, 
+        colors = [], 
+        breakpoints = [], 
+        columnLabelInterval = 5 
+    } = $props();
 
     // Extract columns dynamically from the data
     let columns = $derived(data && Object.keys(data).length > 0 
@@ -14,7 +19,7 @@
         if (value === null || value === undefined) return '#ccc'; // Gray for null values
         
         for (let i = 0; i < breakpoints.length; i++) {
-            if (value <= breakpoints[i]) {
+            if (value < breakpoints[i]) {
                 return colors[i];
             }
         }
@@ -24,6 +29,21 @@
 
 <div class="heatmap-container">
     <div class="heatmap">
+        <!-- Column headers -->
+        <div class="heatmap-header">
+            <div class="row-label"></div>
+            <div class="column-headers">
+                {#each columns as column, i}
+                    <div class="column-header">
+                        {#if i % columnLabelInterval === 0}
+                            <span class="column-label">{column}</span>
+                        {/if}
+                    </div>
+                {/each}
+            </div>
+        </div>
+
+        <!-- Data rows -->
         {#each rows as row}
             <div class="heatmap-row">
                 <div class="row-label">{row}</div>
@@ -54,6 +74,36 @@
         min-width: fit-content;
     }
 
+    .heatmap-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2px;
+    }
+
+    .column-headers {
+        display: flex;
+        gap: 1.5px;
+        flex: 1;
+    }
+
+    .column-header {
+        aspect-ratio: 1;
+        min-width: 16px;
+        min-height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .column-label {
+        font-size: 10px;
+        font-family: TradeGothicBold, sans-serif;
+        color: var(--brandGray90);
+        transform: rotate(-45deg);
+        white-space: nowrap;
+        transform-origin: center;
+    }
+
     .heatmap-row {
         display: flex;
         align-items: center;
@@ -62,7 +112,7 @@
 
     .row-label {
         font-size: 12px;
-        font-family: TradeGothicBold, sans-serif;
+        font-family: TradeGothicBold;
         color: var(--brandGray90);
         min-width: 120px;
         max-width: 120px;
@@ -101,13 +151,21 @@
             padding-right: 4px;
         }
 
-        .cell {
+        .column-headers {
+            gap: 1.65px;
+        }
+
+        .cell, .column-header {
             min-width: 12px;
             min-height: 12px;
         }
+
+        .column-label {
+            font-size: 8px;
+        }
     }
 
-    @media (max-width: 350px) {
+    @media (max-width: 400px) {
         .row-label {
             font-size: 8px;
             min-width: 60px;
@@ -115,9 +173,17 @@
             padding-right: 2px;
         }
 
-        .cell {
+        .column-headers {
+            gap: 1.8px;
+        }
+
+        .cell, .column-header {
             min-width: 10px;
             min-height: 10px;
+        }
+
+        .column-label {
+            font-size: 7px;
         }
     }
 </style>

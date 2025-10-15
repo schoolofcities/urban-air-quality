@@ -68,5 +68,6 @@
         font-size: 14px;
         fill: #000000;
         font-family: OpenSans;
+        margin-bottom: 5px;
     }
 </style>
