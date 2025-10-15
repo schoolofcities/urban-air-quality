@@ -5,3 +5,9 @@ export const AIR_MEASURE_NUM_DAYS_BREAKS = {
     'AQHI+': [3, 6, 12, 24],
     'PM2.5': [4, 8, 16, 32],
 }
+
+export const AIR_POLLUTANTS_PCT_BREAKS = {
+    'All': [20, 40, 60, 80],
+    'Medium': [20, 40, 60, 80],
+    'High': [20, 40, 60, 80],
+}

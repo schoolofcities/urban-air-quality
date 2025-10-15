@@ -8,6 +8,7 @@
 	import Footer from '$lib/Footer.svelte';
 	
 	import DisplayNumDays from '$lib/DisplayNumDays.svelte';
+	import DisplayPctPollutant from '$lib/DisplayPctPollutant.svelte';
 	
 	import Footnote from '$lib/Footnote.svelte';
 	import Footnotes from '$lib/Footnotes.svelte';
@@ -75,6 +76,8 @@
 		<p>
 			Wildfires have become an increasingly significant threat to urban air quality, with smoke plumes traveling hundreds of miles from fire sources to affect metropolitan areas. This analysis examines the relationship between wildfire activity and air pollution levels in urban environments.<Footnote id={addFootnote(fns[0])} />
 		</p>
+
+		<DisplayPctPollutant />
 
 		<p>
 			The impact of wildfire smoke on air quality extends beyond immediate visibility concerns, affecting particulate matter concentrations, ozone levels, and overall air quality indices that directly impact public health.<Footnote id={addFootnote(fns[1])} />
