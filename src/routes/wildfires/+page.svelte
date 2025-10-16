@@ -9,6 +9,7 @@
 	
 	import DisplayNumDays from '$lib/DisplayNumDays.svelte';
 	import DisplayPctPollutant from '$lib/DisplayPctPollutant.svelte';
+	import DisplayCityRankings from '$lib/DisplayCityRankings.svelte';
 	
 	import Footnote from '$lib/Footnote.svelte';
 	import Footnotes from '$lib/Footnotes.svelte';
@@ -84,6 +85,8 @@
 		</p>
 
 		<h2>Key Findings</h2>
+
+		<DisplayCityRankings />
 
 		<p>
 			Recent wildfire seasons have demonstrated the far-reaching effects of smoke on urban air quality, with cities experiencing hazardous air quality conditions even when fires are located hundreds of kilometers away.<Footnote id={addFootnote(fns[2])} />
