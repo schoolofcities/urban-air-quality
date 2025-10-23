@@ -1,12 +1,12 @@
 <script>
-    import { scaleLinear, scalePoint, line, curveCardinal } from 'd3';
+    import { scaleLinear, scalePoint, line, curveMonotoneX } from 'd3';
     
     let { 
         data = {}, 
         topN = 5,
-        width = 800,
-        height = 400,
-        margin = { top: 20, right: 100, bottom: 20, left: 100 }
+        width = 600,
+        height = 300,
+        margin = { top: 20, right: 120, bottom: 40, left: 120 }
     } = $props();
 
     let hoveredCity = $state(null);
@@ -37,9 +37,13 @@
         return Array.from(citySet);
     });
 
-    // Create color scale for cities
+    // Create color scale for cities with more unique colors
     let cityColors = $derived.by(() => {
-        const colors = ['#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#ffff33', '#a65628', '#f781bf'];
+        const colors = [
+            '#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#ffff33', '#a65628', '#f781bf',
+            '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f',
+            '#bcbd22', '#17becf', '#aec7e8', '#ffbb78', '#98df8a', '#ff9896', '#c5b0d5', '#c49c94'
+        ];
         const colorMap = {};
         
         // Assign colors to cities that are in top N at start or end
@@ -81,48 +85,134 @@
 
     let yScale = $derived(scaleLinear()
         .domain([1, topN])
-        .range([margin.top, height - margin.bottom]));
+        .range([margin.top, height - margin.bottom - 20])); // Leave more space for x-axis labels
 
-    // Create line generator
+    // Create line generator with smoother curves
     let lineGenerator = $derived(line()
-        .x(d => xScale(d.period))
-        .y(d => yScale(Math.min(d.rank, topN + 0.5))) // Cap at slightly below visible area
-        .curve(curveCardinal));
+        .x(d => d.x !== undefined ? d.x : xScale(d.period))
+        .y(d => yScale(Math.min(d.rank, topN))) // Clamp at topN
+        .curve(curveMonotoneX));
 
-    // Process data for each city
+    // Process data for each city with simpler segment handling
     let cityData = $derived.by(() => {
         return relevantCities.map(city => {
-            const points = timePeriodsRaw.map(period => ({
+            const rawPoints = timePeriodsRaw.map(period => ({
                 period,
-                rank: data[city][period] || (topN + 1) // Off-chart if no data
+                rank: data[city][period],
+                inTopN: data[city][period] !== null && data[city][period] !== undefined && data[city][period] <= topN
             }));
-            
+
+            // Create simpler line segments - just connect consecutive visible points
+            const lineSegments = [];
+            let currentSegment = [];
+
+            for (let i = 0; i < rawPoints.length; i++) {
+                const point = rawPoints[i];
+                const prevPoint = rawPoints[i - 1];
+                const nextPoint = rawPoints[i + 1];
+
+                if (point.inTopN) {
+                    // Point is visible, add it to current segment
+                    currentSegment.push({
+                        period: point.period,
+                        rank: point.rank
+                    });
+                } else {
+                    // Point is not visible
+                    if (currentSegment.length > 0) {
+                        // Close current segment with exit at topN boundary
+                        if (prevPoint && prevPoint.inTopN) {
+                            currentSegment.push({
+                                period: point.period,
+                                rank: topN,
+                                x: xScale(prevPoint.period) + (xScale(point.period) - xScale(prevPoint.period)) * 0.7
+                            });
+                        }
+                        
+                        lineSegments.push([...currentSegment]);
+                        currentSegment = [];
+                    }
+                    
+                    // Prepare entry for next visible point
+                    if (nextPoint && nextPoint.inTopN) {
+                        currentSegment.push({
+                            period: nextPoint.period,
+                            rank: topN,
+                            x: xScale(point.period) + (xScale(nextPoint.period) - xScale(point.period)) * 0.3
+                        });
+                    }
+                }
+            }
+
+            // Add final segment
+            if (currentSegment.length > 0) {
+                lineSegments.push(currentSegment);
+            }
+
+            // Generate cleaner paths
+            const paths = lineSegments
+                .filter(segment => segment.length >= 2)
+                .map(segment => lineGenerator(segment));
+
+            // Visible points for rendering
+            const visiblePoints = rawPoints.filter(p => p.inTopN);
+
             return {
                 city,
-                points,
                 color: cityColors[city],
-                path: lineGenerator(points.filter(p => p.rank <= topN + 0.5))
+                paths,
+                points: visiblePoints
             };
         });
     });
 
-    // Get labels for start and end
+    // Get labels for start and end with collision avoidance
     let startLabels = $derived.by(() => {
         if (!timePeriodsRaw.length) return [];
         const startPeriod = timePeriodsRaw[0];
-        return cities
+        const labels = cities
             .map(city => ({ city, rank: data[city]?.[startPeriod] }))
             .filter(item => item.rank !== null && item.rank !== undefined && item.rank <= topN)
             .sort((a, b) => a.rank - b.rank);
+        
+        // Adjust positions for overlapping labels
+        const adjustedLabels = [];
+        const used_positions = new Set();
+        
+        labels.forEach(label => {
+            let position = label.rank;
+            while (used_positions.has(position) && position <= topN + 2) {
+                position += 0.3;
+            }
+            used_positions.add(position);
+            adjustedLabels.push({ ...label, adjustedRank: position });
+        });
+        
+        return adjustedLabels;
     });
 
     let endLabels = $derived.by(() => {
         if (!timePeriodsRaw.length) return [];
         const endPeriod = timePeriodsRaw[timePeriodsRaw.length - 1];
-        return cities
+        const labels = cities
             .map(city => ({ city, rank: data[city]?.[endPeriod] }))
             .filter(item => item.rank !== null && item.rank !== undefined && item.rank <= topN)
             .sort((a, b) => a.rank - b.rank);
+        
+        // Adjust positions for overlapping labels
+        const adjustedLabels = [];
+        const used_positions = new Set();
+        
+        labels.forEach(label => {
+            let position = label.rank;
+            while (used_positions.has(position) && position <= topN + 2) {
+                position += 0.3;
+            }
+            used_positions.add(position);
+            adjustedLabels.push({ ...label, adjustedRank: position });
+        });
+        
+        return adjustedLabels;
     });
 
     function handleMouseOver(event, city, period, rank) {
@@ -163,23 +253,10 @@
                 x1={xScale(period)}
                 y1={margin.top}
                 x2={xScale(period)}
-                y2={height - margin.bottom}
+                y2={yScale(topN)}
                 stroke="#f0f0f0"
                 stroke-width="1"
             />
-        {/each}
-
-        <!-- Rank labels -->
-        {#each Array.from({length: topN}, (_, i) => i + 1) as rank}
-            <text
-                x={margin.left - 10}
-                y={yScale(rank)}
-                text-anchor="end"
-                dominant-baseline="middle"
-                class="rank-label"
-            >
-                {rank}
-            </text>
         {/each}
 
         <!-- Time period labels -->
@@ -196,37 +273,37 @@
 
         <!-- City lines -->
         {#each cityData as cityInfo}
-            <path
-                d={cityInfo.path}
-                fill="none"
-                stroke={cityInfo.color}
-                stroke-width={hoveredCity === cityInfo.city ? 3 : 2}
-                class="city-line"
-                role="button"
-                tabindex="0"
-                onmouseover={(e) => handleMouseOver(e, cityInfo.city, '', '')}
-                onmouseout={handleMouseOut}
-            />
+            {#each cityInfo.paths as path}
+                <path
+                    d={path}
+                    fill="none"
+                    stroke={cityInfo.color}
+                    stroke-width={hoveredCity === cityInfo.city ? 4 : 3}
+                    class="city-line"
+                    role="button"
+                    tabindex="0"
+                    onmouseover={(e) => handleMouseOver(e, cityInfo.city, '', '')}
+                    onmouseout={handleMouseOut}
+                />
+            {/each}
         {/each}
 
         <!-- City points -->
         {#each cityData as cityInfo}
             {#each cityInfo.points as point}
-                {#if point.rank <= topN}
-                    <circle
-                        cx={xScale(point.period)}
-                        cy={yScale(point.rank)}
-                        r={hoveredCity === cityInfo.city ? 5 : 3}
-                        fill={cityInfo.color}
-                        stroke="white"
-                        stroke-width="1"
-                        class="city-point"
-                        role="button"
-                        tabindex="0"
-                        onmouseover={(e) => handleMouseOver(e, cityInfo.city, point.period, point.rank)}
-                        onmouseout={handleMouseOut}
-                    />
-                {/if}
+                <circle
+                    cx={xScale(point.period)}
+                    cy={yScale(point.rank)}
+                    r={hoveredCity === cityInfo.city ? 6 : 4}
+                    fill={cityInfo.color}
+                    stroke="white"
+                    stroke-width="2"
+                    class="city-point"
+                    role="button"
+                    tabindex="0"
+                    onmouseover={(e) => handleMouseOver(e, cityInfo.city, point.period, point.rank)}
+                    onmouseout={handleMouseOut}
+                />
             {/each}
         {/each}
 
@@ -234,7 +311,7 @@
         {#each startLabels as label}
             <text
                 x={margin.left - 15}
-                y={yScale(label.rank)}
+                y={yScale(label.adjustedRank)}
                 text-anchor="end"
                 dominant-baseline="middle"
                 class="city-label"
@@ -248,7 +325,7 @@
         {#each endLabels as label}
             <text
                 x={width - margin.right + 15}
-                y={yScale(label.rank)}
+                y={yScale(label.adjustedRank)}
                 text-anchor="start"
                 dominant-baseline="middle"
                 class="city-label"
@@ -266,7 +343,11 @@
             style="left: {tooltip.x + 10}px; top: {tooltip.y - 10}px;"
         >
             <strong>{tooltip.city}</strong><br>
-            {tooltip.period}: Rank {tooltip.rank}
+            {#if tooltip.period}
+                {tooltip.period}: Rank {tooltip.rank}
+            {:else}
+                {tooltip.city}
+            {/if}
         </div>
     {/if}
 </div>
@@ -275,7 +356,8 @@
     .bump-chart-container {
         position: relative;
         width: 100%;
-        overflow-x: auto;
+        max-width: 600px;
+        overflow: visible;
     }
 
     .city-line {
@@ -284,18 +366,12 @@
     }
 
     .city-line:hover {
-        stroke-width: 3 !important;
+        stroke-width: 4 !important;
     }
 
     .city-point {
         cursor: pointer;
         transition: r 0.2s ease;
-    }
-
-    .rank-label {
-        font-size: 12px;
-        font-family: TradeGothicBold, sans-serif;
-        fill: var(--brandGray90);
     }
 
     .period-label {
@@ -324,7 +400,7 @@
     }
 
     @media (max-width: 768px) {
-        .rank-label, .period-label, .city-label {
+        .period-label, .city-label {
             font-size: 10px;
         }
         
