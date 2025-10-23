@@ -11,3 +11,9 @@ export const AIR_POLLUTANTS_PCT_BREAKS = {
     'Medium': [20, 40, 60, 80],
     'High': [20, 40, 60, 80],
 }
+
+export const RANKINGS_NUM_DAYS_BREAKS = {
+    'AQHI': [6, 12, 24, 48],
+    'AQHI+': [8, 16, 32, 64],
+    'PM2.5': [10, 20, 40, 80],
+}
