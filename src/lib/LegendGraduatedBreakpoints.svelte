@@ -1,7 +1,18 @@
 <script>
-    let { colors = [], breakpoints = [], title = "Legend" } = $props();
+    let { 
+        colors = [], 
+        breakpoints = [], 
+        title = "Legend", 
+        showNA = false 
+    } = $props();
 
     let legendWidth = $state(0);
+
+    let naBarWidth = $derived(showNA ? legendWidth * 0.12 : 0);
+    let naGap = $derived(showNA ? legendWidth * 0.02 : 0); 
+    let mainBarWidth = $derived(legendWidth - naBarWidth - naGap);
+    let boxWidth = $derived(mainBarWidth / (colors.length + 0.1));
+    let naBarStart = $derived(mainBarWidth + naGap); 
 </script>
 
 <div class="legend-section">
@@ -12,8 +23,7 @@
     <div class="legend" bind:offsetWidth={legendWidth}>
         <svg width='100%' height='25'>
             {#if legendWidth && breakpoints.length > 0}
-                {@const boxWidth = legendWidth / (colors.length + 0.1)}
-                
+                <!-- Main color bars -->
                 {#each colors as color, i}
                     <rect
                         class="legend-box"
@@ -27,6 +37,7 @@
                     />
                 {/each}
 
+                <!-- Breakpoint labels -->
                 {#each breakpoints as breakpoint, i}
                     <text 
                         class="legend-label" 
@@ -39,6 +50,29 @@
                          breakpoint}
                     </text>
                 {/each}
+
+                <!-- NA bar if enabled -->
+                {#if showNA}
+                    <rect
+                        class="legend-box"
+                        width={naBarWidth}
+                        height="12"
+                        x={naBarStart}
+                        y="0"
+                        stroke="white" 
+                        stroke-width="1"
+                        fill="#ccc"
+                    />
+                    
+                    <text 
+                        class="legend-label" 
+                        text-anchor="middle" 
+                        x={naBarStart + (naBarWidth / 2)} 
+                        y="25"
+                    >
+                        NA
+                    </text>
+                {/if}
             {/if}
         </svg>
     </div>
