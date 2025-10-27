@@ -68,8 +68,8 @@
 
 	<div class="text">
 		<AuthorDate
-			authors="<a href='' target='_blank'>Research Team</a>"
-			date="January 2025"
+			authors="<a href='https://www.linkedin.com/in/aniket-k-8a8b9921b/' target='_blank'>Aniket Kali</a>, <a href='https://jamaps.github.io/' target='_blank'>Jeff Allen</a>"
+			date="October 2025"
 		/>
 
 		<DisplayNumDays />

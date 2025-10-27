@@ -8,6 +8,7 @@
 
     import ButtonGroup from '$lib/ButtonGroup.svelte';
     import Heatmap from '$lib/Heatmap.svelte';
+    import GraphicTitle from '$lib/GraphicTitle.svelte';
     import LegendGraduatedBreakpoints from '$lib/LegendGraduatedBreakpoints.svelte';
     import { GRADUATED_COLORS, AIR_MEASURE_NUM_DAYS_BREAKS } from '$lib/constants.js';
 
@@ -63,6 +64,11 @@
 </script>
 
 <div>
+    <GraphicTitle
+        title="Cities across Canada are seeing a rise in bad air quality"
+        subtitle="Number of recorded days where the maximum value of AQHI of PM2.5 exceeded a threshold"
+    />
+
     <ButtonGroup 
         options={airQualityOptions}
         bind:selectedValue={airQualityMeasure}

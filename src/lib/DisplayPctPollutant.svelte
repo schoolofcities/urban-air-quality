@@ -11,6 +11,7 @@
 
     import ButtonGroup from '$lib/ButtonGroup.svelte';
     import Heatmap from '$lib/Heatmap.svelte';
+    import GraphicTitle from '$lib/GraphicTitle.svelte';
     import LegendGraduatedBreakpoints from '$lib/LegendGraduatedBreakpoints.svelte';
     import { GRADUATED_COLORS, AIR_POLLUTANTS_PCT_BREAKS } from '$lib/constants.js';
 
@@ -59,6 +60,11 @@
 </script>
 
 <div>
+    <GraphicTitle
+        title="Pollutants associated to wildfires (PM2.5) are increasingly responsible for worse air quality"
+        subtitle="Average percent contribution of different pollutants to AQHI, for all recorded hours above a threshold"
+    />
+
     <ButtonGroup 
         options={pollutantOptions}
         bind:selectedValue={pollutant}

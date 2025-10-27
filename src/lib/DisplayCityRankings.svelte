@@ -15,6 +15,7 @@
 
     import ButtonGroup from '$lib/ButtonGroup.svelte';
     import RankingsChart from './RankingsChart.svelte';
+    import GraphicTitle from '$lib/GraphicTitle.svelte';
     import LegendGraduatedBreakpoints from '$lib/LegendGraduatedBreakpoints.svelte';
     import { GRADUATED_COLORS, RANKINGS_NUM_DAYS_BREAKS } from '$lib/constants.js';
 
@@ -61,6 +62,11 @@
 </script>
 
 <div>
+    <GraphicTitle
+        title="Prairie cities are seeing the worst increases in bad air quality, associated with recent wildfires"
+        subtitle="Cities ranked by number of recorded days where the maximum value of AQHI or PM2.5 exceeded the 'High' or 'Unhealthy' thresholds respectively"
+    />
+
     <ButtonGroup 
         options={airQualityOptions}
         bind:selectedValue={airQualityMeasure}
