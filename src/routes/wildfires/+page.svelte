@@ -28,26 +28,19 @@
 <svelte:head>
 	<title>Wildfires and Air Quality | Urban Air Quality</title>
 	
-	<meta name="description" content="Analysis of wildfire impacts on urban air quality and public health" />
+	<meta name="description" content="Analysis of worsening urban air quality and wildfire pollutants" />
 	<meta name="author" content="Urban Air Quality Research Team">
-	<meta rel="canonical" href="https://example.com/wildfires">
+	<meta rel="canonical" href="https://schoolofcities.github.io/urban-air-quality/wildfires">
 
 	<meta property="og:title" content="Wildfires and Air Quality" />
-	<meta property="og:description" content="Analysis of wildfire impacts on urban air quality and public health" />
+	<meta property="og:description" content="Analysis of worsening urban air quality and wildfire pollutants" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://example.com/wildfires" />
+	<meta property="og:url" content="https://schoolofcities.github.io/urban-air-quality/wildfires" />
 	<meta property="og:locale" content="en_CA">
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Wildfires and Air Quality" />
-	<meta name="twitter:description" content="Analysis of wildfire impacts on urban air quality and public health" />
-
-	<meta name="citation_title" content="Wildfires and Urban Air Quality">
-	<meta name="citation_author" content="Author Name 1">
-	<meta name="citation_author" content="Author Name 2">
-	<meta name="citation_publication_date" content="2025/01/15">
-	<meta name="citation_journal_title" content="Urban Air Quality Research">
-	<meta name="citation_abstract_html_url" content="https://example.com/wildfires">
+	<meta name="twitter:description" content="Analysis of worsening urban air quality and wildfire pollutants" />
 </svelte:head>
 
 <main>
@@ -63,7 +56,7 @@
 
 	<TitleStandard
 		title="Wildfires and Urban Air Quality"
-		subtitle="Understanding the impact of wildfire smoke on city air pollution and public health"
+		subtitle="Examining worsening air quality across Canada cities"
 	/>
 
 	<div class="text">
@@ -72,28 +65,26 @@
 			date="October 2025"
 		/>
 
+		<p>
+			Some background about worsening air quality and health risks, definitions of AQHI, and intuition about different pollutants
+		</p>
+
 		<DisplayNumDays />
 
 		<p>
-			Wildfires have become an increasingly significant threat to urban air quality, with smoke plumes traveling hundreds of miles from fire sources to affect metropolitan areas. This analysis examines the relationship between wildfire activity and air pollution levels in urban environments.<Footnote id={addFootnote(fns[0])} />
+			Connect this to wildfires specifically and explain the following graph which has to do with rise in contribution from PM2.5.<Footnote id={addFootnote(fns[0])} />
 		</p>
 
 		<DisplayPctPollutant />
 
 		<p>
-			The impact of wildfire smoke on air quality extends beyond immediate visibility concerns, affecting particulate matter concentrations, ozone levels, and overall air quality indices that directly impact public health.<Footnote id={addFootnote(fns[1])} />
+			Discuss the geographic nature of this - point to the fact that Prairie cities are experiencing the worst of this. Also note the decline in bad air quality along Ontario's industrial belt which is returning now.<Footnote id={addFootnote(fns[1])} />
 		</p>
-
-		<h2>Key Findings</h2>
 
 		<DisplayCityRankings />
 
 		<p>
-			Recent wildfire seasons have demonstrated the far-reaching effects of smoke on urban air quality, with cities experiencing hazardous air quality conditions even when fires are located hundreds of kilometers away.<Footnote id={addFootnote(fns[2])} />
-		</p>
-
-		<p>
-			Understanding these patterns is crucial for developing effective air quality management strategies and public health preparedness plans for wildfire-affected regions.
+			Briefly conclude, about risks, solutions, and tie to the nation building theme and moment we're in.<Footnote id={addFootnote(fns[2])} />
 		</p>
 
 		<div class="details">
