@@ -84,6 +84,7 @@
         breakpoints={AIR_POLLUTANTS_PCT_BREAKS[aqhiThreshold]}
         title="Percent contribution to AQHI"
         showNA={true}
+        percent={true}
     />
 
     <Heatmap 

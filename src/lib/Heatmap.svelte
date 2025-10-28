@@ -97,7 +97,7 @@
 
     .column-label {
         font-size: 10px;
-        font-family: TradeGothicBold, sans-serif;
+        font-family: OpenSansBold, sans-serif;
         color: var(--brandGray90);
         transform: rotate(-45deg);
         white-space: nowrap;
@@ -111,8 +111,8 @@
     }
 
     .row-label {
-        font-size: 12px;
-        font-family: TradeGothicBold;
+        font-size: 11px;
+        font-family: OpenSansBold;
         color: var(--brandGray90);
         min-width: 120px;
         max-width: 120px;
@@ -145,7 +145,7 @@
     /* Mobile responsiveness */
     @media (max-width: 768px) {
         .row-label {
-            font-size: 10px;
+            font-size: 9px;
             min-width: 80px;
             max-width: 80px;
             padding-right: 4px;

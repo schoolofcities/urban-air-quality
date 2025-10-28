@@ -3,7 +3,8 @@
         colors = [], 
         breakpoints = [], 
         title = "Legend", 
-        showNA = false 
+        showNA = false,
+        percent = false,
     } = $props();
 
     let legendWidth = $state(0);
@@ -13,6 +14,19 @@
     let mainBarWidth = $derived(legendWidth - naBarWidth - naGap);
     let boxWidth = $derived(mainBarWidth / (colors.length + 0.1));
     let naBarStart = $derived(mainBarWidth + naGap); 
+
+    function formatBreakpointLabel(breakpoint, index) {
+        let label;
+        if (index === 0) {
+            label = `<${breakpoint}`;
+        } else if (index === breakpoints.length - 1) {
+            label = `≥${breakpoint}`;
+        } else {
+            label = breakpoint;
+        }
+        
+        return percent ? `${label}%` : label;
+    }
 </script>
 
 <div class="legend-section">
@@ -45,9 +59,7 @@
                         x={boxWidth * (i + 1)} 
                         y="25"
                     >
-                        {i === 0 ? `<${breakpoint}` : 
-                         i === breakpoints.length - 1 ? `>${breakpoint}` : 
-                         breakpoint}
+                        {formatBreakpointLabel(breakpoint, i)}
                     </text>
                 {/each}
 
@@ -80,7 +92,7 @@
 
 <style>
     .legend-section {
-        margin: 10px 0;
+        margin: 0;
         padding-top: 5px;
     }
 
@@ -90,10 +102,9 @@
     }
 
     .legend-title p {
-        font-family: SourceSerif;
-        font-size: 16px;
+        font-family: OpenSans;
+        font-size: 15px;
         line-height: 22px;
-        font-weight: normal;
         color: var(--brandGray90);
         margin-bottom: -5px;
     }

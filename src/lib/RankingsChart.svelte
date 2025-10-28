@@ -115,7 +115,7 @@
 <style>
     .rankings-chart-container {
         width: 100%;
-        margin-top: 20px;
+        margin-top: 10px; /* Reduced from 20px */
     }
 
     .rankings-chart {
@@ -127,20 +127,20 @@
     .chart-header {
         display: flex;
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 5px; /* Reduced from 15px */
     }
 
     .period-column {
         flex: 1;
         display: flex;
         justify-content: center;
-        padding: 0 2px;
-        min-width: 0; /* Allow flex items to shrink below content size */
+        padding: 0 3px; /* Reduced gap from 4px to 3px */
+        min-width: 0;
     }
 
     .period-label {
-        font-size: 12px;
-        font-family: TradeGothicBold, sans-serif;
+        font-size: 14px; /* Increased from 12px */
+        font-family: OpenSansBold, sans-serif; /* Made bold */
         color: var(--brandGray90);
         text-align: center;
     }
@@ -149,28 +149,28 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        gap: 2px;
+        gap: 0px; /* No gap between rows */
     }
 
     .rank-row {
         display: flex;
         width: 100%;
-        gap: 2px;
+        gap: 6px; /* Reduced from 8px */
     }
 
     .rank-cell {
         flex: 1;
-        height: 40px;
+        height: 28px; /* Reduced height */
         display: flex;
         align-items: center;
         justify-content: center;
-        min-width: 0; /* Allow flex items to shrink below content size */
+        min-width: 0;
     }
 
     .city-rectangle {
         width: 100%;
         height: 100%;
-        border-radius: 4px;
+        border-radius: 0px; /* No rounded borders */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -185,8 +185,8 @@
     }
 
     .city-name {
-        font-size: 11px;
-        font-family: TradeGothicBold, sans-serif;
+        font-size: 12px; /* Increased from 11px */
+        font-family: OpenSans, sans-serif;
         color: white;
         text-align: center;
         font-weight: bold;
@@ -201,23 +201,23 @@
         width: 100%;
         height: 100%;
         background-color: #f5f5f5;
-        border-radius: 4px;
+        border-radius: 0px; /* No rounded borders */
         border: 1px dashed #ccc;
     }
 
     /* Mobile responsiveness */
     @media (max-width: 768px) {
         .period-label {
-            font-size: 10px;
+            font-size: 14px; /* Increased from 10px */
         }
 
         .rank-cell {
-            height: 48px; /* Increased height for two lines */
+            height: 28px; /* Slightly larger for mobile text wrapping */
         }
 
         .city-name {
-            font-size: 9px;
-            white-space: normal; /* Allow wrapping */
+            font-size: 12px; /* Increased from 9px */
+            white-space: normal;
             line-height: 1.1;
             overflow-wrap: break-word;
             word-break: break-word;
@@ -226,24 +226,20 @@
 
     @media (max-width: 400px) {
         .period-label {
-            font-size: 9px;
+            font-size: 12px; /* Increased from 9px */
         }
 
         .rank-cell {
-            height: 50px; /* Slightly more height for smaller screens */
+            height: 28px;
         }
 
         .city-name {
-            font-size: 8px;
+            font-size: 10px; /* Increased from 8px */
             line-height: 1.0;
         }
 
-        .chart-body {
-            gap: 1px;
-        }
-
         .rank-row {
-            gap: 1px;
+            gap: 3px; /* Reduced from 4px */
         }
     }
 </style>

@@ -19,12 +19,12 @@
     ];
 
     const aqhiThresholdOptions = [
-        { value: '7+', label: 'High and Very High (7+)' },
+        { value: '7+', label: 'High (7+)' },
         { value: '11', label: 'Very High (11)' }
     ];
 
     const pm25ThresholdOptions = [
-        { value: '55.5+', label: 'Unhealthy and Hazardous (55.5+)' },
+        { value: '55.5+', label: 'Unhealthy (55.5+)' },
         { value: '225.5+', label: 'Hazardous (225.5+)' }
     ];
 

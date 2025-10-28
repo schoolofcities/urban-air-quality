@@ -26,9 +26,9 @@
     ];
 
     const federalNumDayRankings = {
-        'AQHI_7+': aqhi_7plus_3y,
-        'AQHI+_7+': aqhi_plus_7plus_3y,
-        'PM2.5_55.5+': pm25_55_5plus_3y,
+        'AQHI_7+': aqhi_7plus_5y,
+        'AQHI+_7+': aqhi_plus_7plus_5y,
+        'PM2.5_55.5+': pm25_55_5plus_5y,
     };
 
     const federalNumDaysData = {
@@ -41,7 +41,7 @@
     };
 
     let airQualityMeasure = $state('AQHI');
-    let currentAirQualityRankings = $state(aqhi_7plus_3y);
+    let currentAirQualityRankings = $state(aqhi_7plus_5y);
     let currentAirQualityData = $state(aqhi_7plus);
 
     function updateCurrentData() {
@@ -51,7 +51,7 @@
         } else {
             key = `${airQualityMeasure}_7+`;
         }
-        currentAirQualityRankings = federalNumDayRankings[key] || aqhi_7plus_3y;
+        currentAirQualityRankings = federalNumDayRankings[key] || aqhi_7plus_5y;
         currentAirQualityData = federalNumDaysData[key] || aqhi_7plus;
     }
 

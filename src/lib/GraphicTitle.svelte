@@ -17,28 +17,24 @@
 <style>
     .container {
         background-color: none;
-        /* max-width: 700px; */
         margin: 0 auto;
         position: relative;
-        /* padding-left: 15px;
-        padding-right: 15px; */
-        /* padding-top: 15px; */
     }
 
     .plots-title {
-        /* max-width: 700px; */
-        /* margin: 0 auto; */
+        margin: 0 auto;
     }
 
-    /* .plots-title h4 {
-        margin: 0;
-    } */
+    .plots-title h4 {
+        font-size: 24px;
+        line-height: 28px;
+    }
 
     .plots-title p {
-        margin-top: -25px;
+        margin-top: -30px;
         margin-bottom: -5px;
-        font-family: RobotoRegular;
-        font-size: 14.5px;
+        font-family: OpenSans;
+        font-size: 16px;
         line-height: 20px;
     }
 </style>

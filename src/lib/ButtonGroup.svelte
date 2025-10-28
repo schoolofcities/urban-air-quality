@@ -8,12 +8,12 @@
 </script>
 
 <div id="destext">
-	<p style="margin-bottom: -5px;">
+	<p>
 		{label}
 	</p>
 </div>
 
-<div class="button-group" style="margin-top: 10px;">
+<div class="button-group">
 	{#each options as option}
 		<button
 			class="toggle-button {selectedValue === option.value ? 'selected' : ''}"
@@ -29,11 +29,12 @@
 	.button-group {
 		display: flex;
 		margin-right: -10px;
+		margin-top: 10px;
 	}
 
 	.toggle-button {
 		width: 100%;
-		padding: 6px 12px;
+		padding: 4px 2px;
 		margin-right: 10px;
 		border: 1px solid var(--brandGray);
 		border-radius: 5px;
@@ -43,8 +44,7 @@
 		background-color: var(--brandWhite);
 		color: var(--brandDarkGray);
 		user-select: none;
-		font-family: TradeGothicBold, sans-serif;
-		font-size: 16px;
+		font-family: OpenSansBold;
 		font-weight: normal;
 	}
 
@@ -65,8 +65,9 @@
 	}
 
 	#destext p {
-		font-family: SourceSerif;
-		font-size: 16px;
+		margin-bottom: -5px;
+		font-family: OpenSans;
+		font-size: 15px;
 		line-height: 22px;
 		font-weight: normal;
 		color: var(--brandGray90);
