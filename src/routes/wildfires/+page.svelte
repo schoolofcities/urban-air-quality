@@ -47,10 +47,10 @@
 	<Logo logoType="Blue" backgroundColor="var(--brandWhite)"/>
 
 	<ImageSingle
-		imageURL="https://example.com/wildfire-smoke-city.jpg"
-		caption="Wildfire smoke affecting urban air quality."
-		source="Example Source."
-		altText="City skyline obscured by wildfire smoke"
+		imageURL="./img/toronto-wildfires.png"
+		caption="Wildfire smoke covering Toronto."
+		source="CBC."
+		altText="Toronto skyline obscured by wildfire smoke"
 		maxWidth="680px"
 	/>
 
