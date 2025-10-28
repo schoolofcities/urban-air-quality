@@ -89,11 +89,25 @@
 
 		<div class="details">
 			<h2>Data & Methodology</h2>
+
 			<p>
-				This analysis combines wildfire occurrence data, air quality monitoring records, and meteorological information to assess the impact of wildfires on urban air quality metrics.
+				We obtained hourly pollutant data for PM<sub>2.5</sub>, NO<sub>2</sub>, and O<sub>3</sub> from the <a href="https://data-donnees.az.ec.gc.ca/data/air/monitor/national-air-pollution-surveillance-naps-program/" target="_blank">National Air Pollution Surveillance (NAPS)</a> program for 2005-2023, and from <a href="https://openaq.org/" target="_blank">OpenAQ</a> for 2024-2025 (through September 29). For cities with multiple sensors, we selected those offering the most consistent temporal coverage and proximity to the city center.
 			</p>
+
 			<p>
-				Data sources include government air quality monitoring networks, satellite-based fire detection systems, and weather station records spanning the past decade.
+				Air quality was assessed using the national Air Quality Health Index (AQHI), developed by <a href="https://pubmed.ncbi.nlm.nih.gov/18376646/" target="_blank">Stieb et al. (2008)</a>. The AQHI is an <a href="https://en.wikipedia.org/wiki/Air_Quality_Health_Index_(Canada)#Calculation" target="_blank">exponential formula</a> combining the relative contributions of three-hour averages of PM<sub>2.5</sub>, NO<sub>2</sub>, and O<sub>3</sub>. We also computed AQHI+, a <a href="https://github.com/schoolofcities/urban-air-quality/blob/main/Technical%20guidelines%20for%20Ontario's%20AQHI%20Plus%20and%20advisory%20program%20(April%202021).docx" target="_blank">Government of Ontario-specific extension</a> that increases sensitivity to short-term pollution spikes and outliers. Our full implementation of both measures is <a href="https://github.com/schoolofcities/urban-air-quality/blob/main/analysis/processing/get_federal_pollutants_aqhi.ipynb" target="_blank">available here</a>.
+			</p>
+
+			<p>
+				Because AQHI is derived from additive pollutant-specific components, we can estimate a single pollutant's percent contribution by recomputing the index while omitting the other two. This forms the basis of the relative contribution analysis presented in the second figure, with the corresponding code <a href="https://github.com/schoolofcities/urban-air-quality/blob/main/analysis/processing/get_federal_pct_pollutant.ipynb" target="_blank">available here</a>.
+			</p>
+
+			<p>
+				We restrict results to years where at least 50% of pollutant data is available. Due to variation in seasonal trends, we opted against any interpolation of missing data. We then count the number of days exceeding specified thresholds based on daily maximum values to measure exposure, and aggregate these counts into five-year intervals to assess long-term rankings.
+			</p>
+
+			<p>
+				All code and <a href="https://github.com/schoolofcities/urban-air-quality/tree/main/data/processed" target="_blank">processed data</a> are publicly available in the accompanying <a href="https://github.com/schoolofcities/urban-air-quality/tree/main" target="_blank">GitHub repository</a>.
 			</p>
 		</div>
 	</div>

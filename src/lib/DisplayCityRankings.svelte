@@ -63,7 +63,7 @@
 
 <div>
     <GraphicTitle
-        title="Prairie cities are seeing a rising number of days with poor air quality, corresponding with recent wildfires"
+        title="Prairie cities are seeing the greatest rise in number of days with poor air quality, corresponding with recent wildfires"
         subtitle="Cities ranked by number of recorded days where the maximum value of AQHI or PM2.5 exceeded the 'High' or 'Unhealthy' thresholds respectively"
     />
 
