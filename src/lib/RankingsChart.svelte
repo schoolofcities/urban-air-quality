@@ -77,7 +77,6 @@
 
 <div class="rankings-chart-container">
     <div class="rankings-chart">
-        <!-- Column headers -->
         <div class="chart-header">
             {#each periodRankings as periodData}
                 <div class="period-column">
@@ -86,7 +85,6 @@
             {/each}
         </div>
 
-        <!-- Rankings rows -->
         <div class="chart-body">
             {#each Array.from({length: topN}, (_, i) => i + 1) as rank}
                 <div class="rank-row">
@@ -115,7 +113,7 @@
 <style>
     .rankings-chart-container {
         width: 100%;
-        margin-top: 10px; /* Reduced from 20px */
+        margin-top: 10px;
     }
 
     .rankings-chart {
@@ -127,20 +125,20 @@
     .chart-header {
         display: flex;
         width: 100%;
-        margin-bottom: 5px; /* Reduced from 15px */
+        margin-bottom: 5px;
     }
 
     .period-column {
         flex: 1;
         display: flex;
         justify-content: center;
-        padding: 0 3px; /* Reduced gap from 4px to 3px */
+        padding: 0 3px;
         min-width: 0;
     }
 
     .period-label {
-        font-size: 14px; /* Increased from 12px */
-        font-family: OpenSansBold, sans-serif; /* Made bold */
+        font-size: 14px;
+        font-family: OpenSansBold, sans-serif;
         color: var(--brandGray90);
         text-align: center;
     }
@@ -149,18 +147,18 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        gap: 0px; /* No gap between rows */
+        gap: 0px;
     }
 
     .rank-row {
         display: flex;
         width: 100%;
-        gap: 6px; /* Reduced from 8px */
+        gap: 6px;
     }
 
     .rank-cell {
         flex: 1;
-        height: 28px; /* Reduced height */
+        height: 28px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -170,7 +168,7 @@
     .city-rectangle {
         width: 100%;
         height: 100%;
-        border-radius: 0px; /* No rounded borders */
+        border-radius: 0px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -185,7 +183,7 @@
     }
 
     .city-name {
-        font-size: 12px; /* Increased from 11px */
+        font-size: 12px;
         font-family: OpenSans, sans-serif;
         color: white;
         text-align: center;
@@ -201,22 +199,21 @@
         width: 100%;
         height: 100%;
         background-color: #f5f5f5;
-        border-radius: 0px; /* No rounded borders */
+        border-radius: 0px;
         border: 1px dashed #ccc;
     }
 
-    /* Mobile responsiveness */
     @media (max-width: 768px) {
         .period-label {
-            font-size: 14px; /* Increased from 10px */
+            font-size: 14px;
         }
 
         .rank-cell {
-            height: 28px; /* Slightly larger for mobile text wrapping */
+            height: 28px;
         }
 
         .city-name {
-            font-size: 12px; /* Increased from 9px */
+            font-size: 12px;
             white-space: normal;
             line-height: 1.1;
             overflow-wrap: break-word;
@@ -226,7 +223,7 @@
 
     @media (max-width: 400px) {
         .period-label {
-            font-size: 12px; /* Increased from 9px */
+            font-size: 12px;
         }
 
         .rank-cell {
@@ -234,12 +231,12 @@
         }
 
         .city-name {
-            font-size: 10px; /* Increased from 8px */
+            font-size: 10px;
             line-height: 1.0;
         }
 
         .rank-row {
-            gap: 3px; /* Reduced from 4px */
+            gap: 3px;
         }
     }
 </style>
