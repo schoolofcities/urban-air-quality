@@ -61,7 +61,7 @@
 
 <div>
     <GraphicTitle
-        title="Pollutants associated to wildfires (PM2.5) are increasingly responsible for worse air quality"
+        title="Pollution associated with wildfires (PM2.5) is increasingly responsible for poor air quality"
         subtitle="Average percent contribution of different pollutants to AQHI, for all recorded hours above a threshold"
     />
 
