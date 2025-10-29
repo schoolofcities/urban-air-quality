@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>Wildfires and Air Quality | Urban Air Quality</title>
+	<title>Wildfires and Urban Air Quality | School of Cities</title>
 	
 	<meta name="description" content="Analysis of worsening urban air quality and wildfire pollutants" />
 	<meta name="author" content="Urban Air Quality Research Team">
