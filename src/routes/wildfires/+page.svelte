@@ -10,6 +10,7 @@
 	import DisplayNumDays from '$lib/DisplayNumDays.svelte';
 	import DisplayPctPollutant from '$lib/DisplayPctPollutant.svelte';
 	import DisplayCityRankings from '$lib/DisplayCityRankings.svelte';
+	import AQHIBar from '$lib/AQHIBar.svelte';
 </script>
 
 <svelte:head>
@@ -67,6 +68,8 @@
 			<li><strong>AQHI:</strong> Computed using the relative amounts of harmful pollutants in the air over any 3-hour period.</li>
 			<li><strong>AQHI+:</strong> An extension of AQHI, sensitive to extreme events, like a passing smoke plume, or flaring industrial refinery.</li>
 		</ul>
+
+		<AQHIBar />
 
 		<p>
 			AQHI is computed using three different pollutants:
