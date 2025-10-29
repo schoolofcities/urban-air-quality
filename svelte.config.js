@@ -14,9 +14,8 @@ const config = {
 			entries: ['*'] // prerender everything
 		},
 		paths: {
-		    // change below to your repo name
-		    base: dev ? "" : "/urban-air-quality",
-		}
+			base: process.env.NODE_ENV === 'production' ? '/urban-air-quality' : ''
+		}		  
 	}
 };
 
