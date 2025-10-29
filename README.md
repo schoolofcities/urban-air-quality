@@ -1,4 +1,4 @@
-# Urban Air Quality
+# [Urban Air Quality](https://schoolofcities.github.io/urban-air-quality/wildfires)
 
 **Authors:** [Aniket Kali](https://www.linkedin.com/in/aniket-k-8a8b9921b/), [Jeff Allen](https://jamaps.github.io/)
 
