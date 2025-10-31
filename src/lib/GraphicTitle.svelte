@@ -26,15 +26,15 @@
     }
 
     .plots-title h4 {
-        font-size: 24px;
-        line-height: 28px;
+        font-size: 26px;
+        line-height: 32px;
     }
 
     .plots-title p {
-        margin-top: -30px;
+        margin-top: -25px;
         margin-bottom: -5px;
-        font-family: OpenSans;
-        font-size: 16px;
-        line-height: 20px;
+        font-family: OpenSansItalic;
+        font-size: 17.5px;
+        line-height: 23px;
     }
 </style>

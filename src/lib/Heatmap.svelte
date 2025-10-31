@@ -98,7 +98,7 @@
     .column-label {
         font-size: 10px;
         font-family: OpenSansBold, sans-serif;
-        color: var(--brandGray90);
+        color: var(--brandGray80);
         transform: rotate(-45deg);
         white-space: nowrap;
         transform-origin: center;
@@ -111,9 +111,9 @@
     }
 
     .row-label {
-        font-size: 11px;
+        font-size: 12px;
         font-family: OpenSansBold;
-        color: var(--brandGray90);
+        color: var(--brandGray80);
         min-width: 120px;
         max-width: 120px;
         padding-right: 8px;

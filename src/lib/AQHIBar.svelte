@@ -67,17 +67,17 @@
 
     .aqhi-label {
         font-family: OpenSansBold, sans-serif;
-        font-size: 13px;
+        font-size: 14px;
         color: var(--brandGray90);
-        margin-top: 5px;
+        margin-top: 2px;
         text-align: center;
     }
 
     .aqhi-range {
-        font-family: OpenSansBold, sans-serif;
-        font-size: 13px;
-        color: var(--brandGray70);
-        margin-top: 2px;
+        font-family: OpenSans, sans-serif;
+        font-size: 14px;
+        color: var(--brandGray90);
+        margin-top: 0px;
         text-align: center;
     }
 

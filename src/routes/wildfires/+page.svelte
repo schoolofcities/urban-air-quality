@@ -3,6 +3,9 @@
 
 	import Logo from '$lib/LogoTop.svelte';
 	import TitleStandard from '$lib/TitleStandard.svelte';
+	import TitleHalfSplit from '$lib/TitleHalfSplit.svelte';
+	import TitleFullPage from '$lib/TitleFullPage.svelte';
+
 	import AuthorDate from '$lib/AuthorDate.svelte';
 	import ImageSingle from '$lib/ImageSingle.svelte';
 	import Footer from '$lib/Footer.svelte';
@@ -32,7 +35,7 @@
 </svelte:head>
 
 <main>
-	<Logo logoType="Blue" backgroundColor="var(--brandWhite)"/>
+	<!-- <Logo logoType="Blue" backgroundColor="var(--brandWhite)"/>
 
 	<ImageSingle
 		imageURL="./img/toronto-wildfires.png"
@@ -45,7 +48,38 @@
 	<TitleStandard
 		title="Wildfires and Urban Air Quality"
 		subtitle="Examining worsening air quality across Canada cities"
+	/> -->
+
+	<!-- <TitleHalfSplit
+		title="Wildfires and urban air quality"
+		subtitle="Tracking worsening air quality across Canada cities"
+		image="./img/michelle-photo-toronto.png"
+		imageAltText="Photo of Toronto on a smokey day in 2023"
+		imageCaption=""
+		imageSource=""
+		titleFontColour="var(--brandBlack)"
+		titleBorderColour="var(--brandRed)"
+		subtitleFontColour="var(--brandBlack)"
+		backgroundColour="#faf6e5"
+		logoStyle='Light'
+	/> -->
+
+	<TitleFullPage
+		title="Wildfires and urban air quality"
+		subtitle="Examining worsening air quality across Canada cities"
+		image="./img/toront-smoky-jeff-june-2023.jpg"
+		imageAltText="Photo of Toronto on a smokey day in 2023"
+		imageOpacity=1
+		
+		titleFontColour="var(--brandWhite)"
+		titleBorderColour="var(--brandWhite)"
+		subtitleFontColour="var(--brandWhite)"
+
+		logoType='White'
 	/>
+
+
+
 
 	<div class="text">
 		<AuthorDate
@@ -69,7 +103,7 @@
 			<li><strong>AQHI+:</strong> An extension of AQHI, sensitive to extreme events, like a passing smoke plume, or flaring industrial refinery.</li>
 		</ul>
 
-		<AQHIBar />
+		<AQHIBar/>
 
 		<p>
 			AQHI is computed using three different pollutants:
