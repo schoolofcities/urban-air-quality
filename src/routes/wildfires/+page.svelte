@@ -67,7 +67,7 @@
 	<TitleFullPage
 		title="Wildfires and urban air quality"
 		subtitle="Examining worsening air quality across Canada cities"
-		image="./img/toront-smoky-jeff-june-2023.jpg"
+		image="./img/toronto-smoky-jeff-june-2023.jpg"
 		imageAltText="Photo of Toronto on a smokey day in 2023"
 		imageOpacity=1
 		
@@ -88,7 +88,7 @@
 		/>
 
 		<p>
-			Clean air is a basic part of a decent life in the city: it makes going outside pleasant as much as safe. The smoky smell of a barbeque might be nice before a summertime dinner, but less so when it <a href="https://www.cbc.ca/news/canada/toronto/air-quality-statement-in-effect-for-toronto-gta-1.7600597" target="_blank">coats your city</a> in noxious fumes. Bad air makes for <a href="https://www.canada.ca/en/environment-climate-change/campaigns/canadian-environment-week/clean-air-day/health-impacts-air-pollution.html" target="_blank">more trips to the hospital</a>, and a <a href="https://www.canada.ca/en/health-canada/services/publications/healthy-living/human-health-effects-wildfire-smoke.html" target="_blank">faster trek to the grave</a>. 
+			Clean air is a basic part of a decent life in the city: it makes going outside pleasant as much as safe. The smoky smell of a barbeque might be nice before a summertime dinner, but less so when it <a href="https://www.cbc.ca/news/canada/toronto/air-quality-statement-in-effect-for-toronto-gta-1.7600597" target="_blank">coats your city</a> in noxious fumes. Bad air makes for <a href="https://www.canada.ca/en/environment-climate-change/campaigns/canadian-environment-week/clean-air-day/health-impacts-air-pollution.html" target="_blank">more trips to the hospital</a>, and a <a href="https://schoolofcities.github.io/air-pollution-and-premature-mortality" target="_blank">faster trek to the grave</a>. 
 		</p>
 
 		<p>
@@ -123,7 +123,7 @@
 		<DisplayCityRankings />
 
 		<p>
-			When we see poor air quality, where does it come from? In our analysis below, PM2.5 is increasingly responsible. It's the pollutant released by wildfires after all, and these last three years have been the worst three wildfire seasons <a href="https://www.cbc.ca/newsinteractives/features/wildfires-tracker-canada" target="_blank">on record</a>.
+			When we see poor air quality, where does it come from? In our analysis below, PM<sub>2.5</sub> is increasingly responsible. It's the pollutant released by wildfires after all, and these last three years have been the worst three wildfire seasons <a href="https://www.cbc.ca/newsinteractives/features/wildfires-tracker-canada" target="_blank">on record</a>.
 		</p>
 
 		<DisplayPctPollutant />

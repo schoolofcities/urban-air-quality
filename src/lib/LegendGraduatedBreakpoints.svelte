@@ -82,7 +82,7 @@
                         x={naBarStart + (naBarWidth / 2)} 
                         y="25"
                     >
-                        NA
+                        No data
                     </text>
                 {/if}
             {/if}
@@ -114,5 +114,17 @@
         fill: #000000;
         font-family: OpenSans;
         margin-bottom: 5px;
+    }
+
+    @media (max-width: 768px) {
+        .legend-label {
+            font-size: 13px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .legend-label {
+            font-size: 11px;
+        }
     }
 </style>

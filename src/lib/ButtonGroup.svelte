@@ -20,7 +20,7 @@
 			type="button"
 			onclick={() => onSelect(option.value)}
 		>
-			{option.label}
+			{@html option.label}
 		</button>
 	{/each}
 </div>

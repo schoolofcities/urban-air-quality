@@ -7,10 +7,10 @@
 
 <div class="container plots-title">
     <h4>
-        {title}
+        {@html title}
     </h4>
     <p>
-        {subtitle}
+        {@html subtitle}
     </p>
 </div>
 

@@ -16,9 +16,9 @@
     import { GRADUATED_COLORS, AIR_POLLUTANTS_PCT_BREAKS } from '$lib/constants.js';
 
     const pollutantOptions = [
-        { value: 'PM2.5', label: 'PM2.5' },
-        { value: 'NO2', label: 'NO2' },
-        { value: 'O3', label: 'O3' }
+        { value: 'PM2.5', label: 'PM<sub>2.5</sub>' },
+        { value: 'NO2', label: 'NO<sub>2</sub>' },
+        { value: 'O3', label: 'O<sub>3</sub>' }
     ];
 
     const aqhiThresholdOptions = [
@@ -61,7 +61,7 @@
 
 <div>
     <GraphicTitle
-        title="Pollution associated with wildfires (PM2.5) is increasingly responsible for poor air quality"
+        title="Pollution associated with wildfires (PM<sub>2.5</sub>) is increasingly responsible for poor air quality"
         subtitle="Average percent contribution of different pollutants to AQHI, for all recorded hours above a threshold"
     />
 

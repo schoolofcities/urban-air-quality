@@ -184,6 +184,20 @@ p {
 	text-rendering: optimizeLegibility;
 }
 
+sub, sup {
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
 @media screen and (max-width: 600px) {
 	.text p {
 		font-size: 17px;

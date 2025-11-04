@@ -22,7 +22,7 @@
     const airQualityOptions = [
         { value: 'AQHI', label: 'AQHI' },
         { value: 'AQHI+', label: 'AQHI+' },
-        { value: 'PM2.5', label: 'PM2.5' }
+        { value: 'PM2.5', label: 'PM<sub>2.5</sub>' }
     ];
 
     const federalNumDayRankings = {
@@ -64,7 +64,7 @@
 <div>
     <GraphicTitle
         title="Prairie cities are seeing the greatest rise in number of days with poor air quality, corresponding with recent wildfires"
-        subtitle="Cities ranked by number of recorded days where the maximum value of AQHI or PM2.5 exceeded the 'High' or 'Unhealthy' thresholds respectively"
+        subtitle="Cities ranked by number of recorded days where the maximum value of AQHI or PM<sub>2.5</sub> exceeded the 'High' or 'Unhealthy' thresholds respectively"
     />
 
     <ButtonGroup 

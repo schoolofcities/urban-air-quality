@@ -15,7 +15,7 @@
     const airQualityOptions = [
         { value: 'AQHI', label: 'AQHI' },
         { value: 'AQHI+', label: 'AQHI+' },
-        { value: 'PM2.5', label: 'PM2.5' }
+        { value: 'PM2.5', label: 'PM<sub>2.5</sub>' }
     ];
 
     const aqhiThresholdOptions = [
@@ -66,7 +66,7 @@
 <div>
     <GraphicTitle
         title="Cities across Canada are seeing a rise in poor air quality"
-        subtitle="Number of recorded days where the maximum value of AQHI of PM2.5 exceeded a threshold"
+        subtitle="Number of recorded days where the maximum value of AQHI of PM<sub>2.5</sub> exceeded a threshold"
     />
 
     <ButtonGroup 
