@@ -9,8 +9,10 @@ vite.config.ts.timestamp-*
 # Python
 __pycache__/
 
+# Data
 data/raw
 data/plots
+data/processed/ontario
 
 # Jupyter / Analysis
 .ipynb_checkpoints/
