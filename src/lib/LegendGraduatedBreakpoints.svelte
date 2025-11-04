@@ -5,6 +5,7 @@
         title = "Legend", 
         showNA = false,
         percent = false,
+        rangeLabels = false,
     } = $props();
 
     let legendWidth = $state(0);
@@ -23,6 +24,26 @@
             label = `≥${breakpoint}`;
         } else {
             label = breakpoint;
+        }
+        
+        return percent ? `${label}%` : label;
+    }
+
+    function formatRangeLabel(index) {
+        let label;
+        if (index === 0) {
+            // First range: <=X (where X is first breakpoint - 1)
+            const upperBound = breakpoints[0] - 1;
+            label = `≤${upperBound}`;
+        } else if (index === colors.length - 1) {
+            // Last range: X+ (where X is last breakpoint)
+            const lowerBound = breakpoints[breakpoints.length - 1];
+            label = `${lowerBound}+`;
+        } else {
+            // Middle ranges: X-Y (where X is previous breakpoint, Y is current breakpoint - 1)
+            const lowerBound = breakpoints[index - 1];
+            const upperBound = breakpoints[index] - 1;
+            label = `${lowerBound}-${upperBound}`;
         }
         
         return percent ? `${label}%` : label;
@@ -51,17 +72,32 @@
                     />
                 {/each}
 
-                <!-- Breakpoint labels -->
-                {#each breakpoints as breakpoint, i}
-                    <text 
-                        class="legend-label" 
-                        text-anchor="middle" 
-                        x={boxWidth * (i + 1)} 
-                        y="25"
-                    >
-                        {formatBreakpointLabel(breakpoint, i)}
-                    </text>
-                {/each}
+                <!-- Labels -->
+                {#if rangeLabels}
+                    <!-- Range labels centered under bars -->
+                    {#each colors as color, i}
+                        <text 
+                            class="legend-label" 
+                            text-anchor="middle" 
+                            x={boxWidth * i + (boxWidth / 2)} 
+                            y="25"
+                        >
+                            {formatRangeLabel(i)}
+                        </text>
+                    {/each}
+                {:else}
+                    <!-- Breakpoint labels at bar edges -->
+                    {#each breakpoints as breakpoint, i}
+                        <text 
+                            class="legend-label" 
+                            text-anchor="middle" 
+                            x={boxWidth * (i + 1)} 
+                            y="25"
+                        >
+                            {formatBreakpointLabel(breakpoint, i)}
+                        </text>
+                    {/each}
+                {/if}
 
                 <!-- NA bar if enabled -->
                 {#if showNA}

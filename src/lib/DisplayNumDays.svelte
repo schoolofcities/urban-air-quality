@@ -88,6 +88,7 @@
         breakpoints={AIR_MEASURE_NUM_DAYS_BREAKS[airQualityMeasure]}
         title="Number of days per year"
         showNA={true}
+        rangeLabels={true}
     />
 
     <Heatmap 

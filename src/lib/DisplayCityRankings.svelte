@@ -78,6 +78,7 @@
         colors={GRADUATED_COLORS}
         breakpoints={RANKINGS_NUM_DAYS_BREAKS[airQualityMeasure]}
         title="Number of days per period"
+        rangeLabels={true}
     />
 
     <RankingsChart 
