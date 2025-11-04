@@ -66,7 +66,7 @@
 <div>
     <GraphicTitle
         title="Cities across Canada are seeing a rise in poor air quality"
-        subtitle="Number of recorded days where the maximum value of AQHI of PM<sub>2.5</sub> exceeded a threshold"
+        subtitle="Number of recorded days where the maximum value of AQHI or PM<sub>2.5</sub> exceeded a threshold"
     />
 
     <ButtonGroup 

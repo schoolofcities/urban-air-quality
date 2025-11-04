@@ -148,7 +148,7 @@
 			</p>
 
 			<p>
-				Because AQHI is derived from additive pollutant-specific components, we can estimate a single pollutant's percent contribution by recomputing the index while omitting the other two. This forms the basis of the relative contribution analysis presented in the second figure, with the corresponding code <a href="https://github.com/schoolofcities/urban-air-quality/blob/main/analysis/processing/get_federal_pct_pollutant.ipynb" target="_blank">available here</a>.
+				Because AQHI is derived from additive pollutant-specific components, we can estimate a single pollutant's percent contribution by recomputing the index while omitting the other two. This forms the basis of the relative contribution analysis presented in the final figure, with the corresponding code <a href="https://github.com/schoolofcities/urban-air-quality/blob/main/analysis/processing/get_federal_pct_pollutant.ipynb" target="_blank">available here</a>.
 			</p>
 
 			<p>
