@@ -140,7 +140,7 @@
 			<h2>Data & Methodology</h2>
 
 			<p>
-				We obtained hourly pollutant data for PM<sub>2.5</sub>, NO<sub>2</sub>, and O<sub>3</sub> from the <a href="https://data-donnees.az.ec.gc.ca/data/air/monitor/national-air-pollution-surveillance-naps-program/" target="_blank">National Air Pollution Surveillance (NAPS)</a> program for 2005-2023, and from <a href="https://openaq.org/" target="_blank">OpenAQ</a> for 2024-2025 (through September 29). For cities with multiple sensors, we selected those offering the most consistent temporal coverage and proximity to the city center.
+				We obtained hourly pollutant data for PM<sub>2.5</sub>, NO<sub>2</sub>, and O<sub>3</sub> from the <a href="https://data-donnees.az.ec.gc.ca/data/air/monitor/national-air-pollution-surveillance-naps-program/" target="_blank">National Air Pollution Surveillance (NAPS)</a> program for 2005-2023, and from <a href="https://openaq.org/" target="_blank">OpenAQ</a> for 2024-2025 (through October 31). For cities with multiple sensors, we selected those offering the most consistent temporal coverage and proximity to the city center.
 			</p>
 
 			<p>

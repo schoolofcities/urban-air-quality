@@ -2,42 +2,42 @@
 St. John's,25.0,27.0,24.0,39.0
 Halifax,20.0,23.0,30.0,38.0
 Fredericton,34.0,30.0,30.0,39.0
-Montréal,7.0,23.0,24.0,24.0
-Quebec,12.0,9.0,19.0,21.0
-Sherbrooke,17.0,26.0,28.0,37.0
 Saguenay,15.0,20.0,27.0,35.0
-Trois Rivières,9.0,12.0,19.0,27.0
-Ottawa,29.0,36.0,41.0,27.0
-Windsor,17.0,31.0,36.0,26.0
+Quebec,12.0,9.0,19.0,21.0
+Trois Rivières,9.0,12.0,19.0,28.0
+Sherbrooke,17.0,26.0,28.0,37.0
+Montréal,7.0,23.0,24.0,24.0
+Ottawa,29.0,36.0,41.0,28.0
 Kingston,32.0,39.0,36.0,31.0
-Toronto,38.0,36.0,36.0,24.0
-Hamilton,17.0,19.0,36.0,23.0
-Sudbury,38.0,40.0,29.0,19.0
-Sault Ste. Marie,34.0,33.0,34.0,20.0
-Thunder Bay,34.0,33.0,33.0,33.0
-London,29.0,33.0,41.0,27.0
 St. Catharines,25.0,40.0,36.0,32.0
+Toronto,38.0,36.0,36.0,24.0
 North Bay,34.0,42.0,24.0,18.0
 Barrie,29.0,31.0,34.0,16.0
+Hamilton,17.0,19.0,36.0,23.0
+Sudbury,38.0,40.0,29.0,19.0
+London,29.0,33.0,41.0,28.0
+Windsor,17.0,31.0,36.0,26.0
+Sault Ste. Marie,34.0,33.0,34.0,20.0
+Thunder Bay,34.0,33.0,33.0,33.0
 Winnipeg,32.0,21.0,22.0,17.0
-Brandon,10.0,13.0,6.0,22.0
 Thompson,38.0,8.0,10.0,39.0
+Brandon,10.0,13.0,6.0,22.0
 Regina,12.0,9.0,18.0,11.0
-Saskatoon,5.0,14.0,13.0,6.0
 Prince Albert,22.0,16.0,23.0,2.0
+Saskatoon,5.0,14.0,13.0,6.0
+Fort Mcmurray,3.0,3.0,3.0,1.0
+Lethbridge,25.0,18.0,4.0,13.0
 Edmonton,2.0,16.0,11.0,3.0
 Calgary,20.0,7.0,8.0,12.0
-Lethbridge,25.0,18.0,4.0,13.0
-Fort Mcmurray,3.0,3.0,3.0,1.0
-Grande Prairie,12.0,9.0,7.0,5.0
 Hinton,15.0,2.0,2.0,10.0
-Vancouver,23.0,27.0,11.0,27.0
-Prince George,1.0,6.0,1.0,8.0
-Victoria,8.0,4.0,13.0,36.0
-Kamloops,4.0,21.0,16.0,9.0
+Grande Prairie,12.0,9.0,7.0,5.0
 Kelowna,11.0,23.0,5.0,14.0
-Nanaimo,25.0,36.0,13.0,33.0
+Kamloops,4.0,21.0,16.0,9.0
 Fort St. John,38.0,27.0,9.0,4.0
-Whitehorse,23.0,5.0,19.0,15.0
-Yellowknife,6.0,1.0,17.0,7.0
+Prince George,1.0,6.0,1.0,8.0
+Vancouver,23.0,27.0,11.0,27.0
+Victoria,8.0,4.0,13.0,36.0
+Nanaimo,25.0,36.0,13.0,33.0
 Iqaluit,38.0,14.0,30.0,39.0
+Yellowknife,6.0,1.0,17.0,7.0
+Whitehorse,23.0,5.0,19.0,15.0
