@@ -84,7 +84,7 @@
 	<div class="text">
 		<AuthorDate
 			authors="<a href='https://www.linkedin.com/in/aniket-k-8a8b9921b/' target='_blank'>Aniket Kali</a>, <a href='https://jamaps.github.io/' target='_blank'>Jeff Allen</a>"
-			date="October 2025"
+			date="November 2025"
 		/>
 
 		<p>
@@ -92,26 +92,28 @@
 		</p>
 
 		<p>
-			Across Canada, recent years have seen a resurgence in poor air quality, and growing wildfires are the biggest culprit. This year was the <a href="https://www.theguardian.com/world/2025/aug/11/canada-wildfire-season" target="_blank">second worst wildfire</a> season on record - just two years after the record-shattering 2023 wildfire season. Man-made <a href="https://climateinstitute.ca/news/fact-sheet-wildfires/" target="_blank">climate</a> <a href="https://www.nature.com/articles/s41467-024-51154-7" target="_blank">change</a> is to thank: it makes for more extreme fire weather conditions, hotter and windier summers, and more erratic rainfall. 
+			Across Canada, recent years have seen a resurgence in poor air quality, and growing wildfires are the biggest culprit. 2025 was the <a href="https://www.theguardian.com/world/2025/aug/11/canada-wildfire-season" target="_blank">second worst wildfire</a> season on record, just two years after the record-shattering 2023 wildfire season. Man-made <a href="https://climateinstitute.ca/news/fact-sheet-wildfires/" target="_blank">climate</a> <a href="https://www.nature.com/articles/s41467-024-51154-7" target="_blank">change</a> is to thank—it makes for more extreme fire weather conditions, hotter and windier summers, and more erratic rainfall. 
 		</p>
 
 		<p>
-			Below, we've plotted out the number of days that various cities across Canada were exposed to harmful levels of pollution, from 2005 to 2025. We look at this using two versions of the Air Quality Health Index (AQHI), which range from 1 to 11:
+			Below, we've plotted out the number of days that various cities across Canada were exposed to harmful levels of pollution, from 2005 to 2025, based on Canada's <a href="https://www.canada.ca/en/environment-climate-change/services/air-quality-health-index.html" target="_blank"> Air Quality Health Index (AQHI)</a>. The AQHI ranges from 1 to 11, where at 'High' and 'Very High' levels at risk populations are recommended to reduce or avoid outdoor activities.
 		</p>
-		<ul class="compact-list">
-			<li><strong>AQHI:</strong> Computed using the relative amounts of harmful pollutants in the air over any 3-hour period.</li>
-			<li><strong>AQHI+:</strong> An extension of AQHI, sensitive to extreme events, like a passing smoke plume, or flaring industrial refinery.</li>
-		</ul>
-
 		<AQHIBar/>
-
 		<p>
-			AQHI is computed using three different pollutants:
+			The AQHI is a combined metric based on three different pollutants:
 		</p>
 		<ul class="compact-list">
 			<li><strong>PM<sub>2.5</sub>:</strong> Tiny pollution particles from things like wildfire smoke or traffic that can get deep into your lungs, like the haze from a nearby fire.</li>
 			<li><strong>NO<sub>2</sub>:</strong> A gas mainly from vehicles or industry that irritates the lungs, like the sharp smell near a busy road.</li>
 			<li><strong>O<sub>3</sub>:</strong> Formed when other pollutants mix with sunlight like on a smoggy summer day, it can make breathing harder.</li>
+		</ul>
+
+		<p>
+			We specifically analyze two versions of the AQHI:
+		</p>
+		<ul class="compact-list">
+			<li><strong>AQHI:</strong> Computed using the relative amounts of harmful pollutants in the air over any 3-hour period.</li>
+			<li><strong>AQHI+:</strong> An extension of AQHI, sensitive to extreme events, like a passing smoke plume, or flaring industrial refinery.</li>
 		</ul>
 
 		<DisplayNumDays />

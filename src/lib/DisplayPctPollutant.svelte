@@ -59,7 +59,10 @@
     }
 </script>
 
-<div>
+<div aria-label="Chart showing average percent contribution of different pollutants to AQHI, for all recorded hours above a threshold. Trends show that pollution associated with wildfires like PM 2.5 is increasingly responsible for poor air quality">
+
+    <div aria-hidden="true">
+
     <GraphicTitle
         title="Pollution associated with wildfires (PM<sub>2.5</sub>) is increasingly responsible for poor air quality"
         subtitle="Average percent contribution of different pollutants to AQHI, for all recorded hours above a threshold"
@@ -92,4 +95,7 @@
         colors={GRADUATED_COLORS}
         breakpoints={AIR_POLLUTANTS_PCT_BREAKS[aqhiThreshold]}
     />
+
+</div>
+
 </div>

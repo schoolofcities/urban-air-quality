@@ -1,13 +1,21 @@
 <script>
-	import '../assets/global-styles.css';
 
-	import Logo from '$lib/LogoTop.svelte';
-	import TitleStandard from '$lib/TitleStandard.svelte';
-	import AuthorDate from '$lib/AuthorDate.svelte';
-	import Footer from '$lib/Footer.svelte';
+	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
+
+	onMount(() => {
+		goto('/urban-air-quality/wildfires');
+	});
+
+	// import '../assets/global-styles.css';
+
+	// import Logo from '$lib/LogoTop.svelte';
+	// import TitleStandard from '$lib/TitleStandard.svelte';
+	// import AuthorDate from '$lib/AuthorDate.svelte';
+	// import Footer from '$lib/Footer.svelte';
 </script>
 
-
+<!-- 
 
 <svelte:head>
 	<title>Urban Air Quality | School of Cities</title>
@@ -53,4 +61,4 @@
 
 	<Footer />
 
-</main>
+</main> -->

@@ -61,7 +61,10 @@
     }
 </script>
 
-<div>
+<div aria-label="Chart showing cities ranked by number of recorded days where the maximum value of AQHI or PM 2.5 exceeded the 'High' or 'Unhealthy' thresholds respectively. Trends show that Prairie cities are seeing the greatest rise in number of days with poor air quality, corresponding with recent wildfires">
+
+    <div aria-hidden="true">
+
     <GraphicTitle
         title="Prairie cities are seeing the greatest rise in number of days with poor air quality, corresponding with recent wildfires"
         subtitle="Cities ranked by number of recorded days where the maximum value of AQHI or PM<sub>2.5</sub> exceeded the 'High' or 'Unhealthy' thresholds respectively"
@@ -88,4 +91,6 @@
         colors={GRADUATED_COLORS}
         breakpoints={RANKINGS_NUM_DAYS_BREAKS[airQualityMeasure]}
     />
+</div>
+
 </div>

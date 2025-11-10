@@ -63,37 +63,41 @@
     }
 </script>
 
-<div>
-    <GraphicTitle
-        title="Cities across Canada are seeing a rise in poor air quality"
-        subtitle="Number of recorded days where the maximum value of AQHI or PM<sub>2.5</sub> exceeded a threshold"
-    />
+<div aria-label="Chart showing the number of recorded days where the maximum value of AQHI or PM2.5 exceeded a threshold. Trends show that cities across Canada are seeing a rise in poor air quality">
 
-    <ButtonGroup 
-        options={airQualityOptions}
-        bind:selectedValue={airQualityMeasure}
-        onSelect={airQualityMeasureSelect}
-        label="Select an air quality measure:"
-    />
+    <div aria-hidden="true">
+    
+        <GraphicTitle
+            title="Cities across Canada are seeing a rise in poor air quality"
+            subtitle="Number of recorded days where the maximum value of AQHI or PM<sub>2.5</sub> exceeded a threshold"
+        />
 
-    <ButtonGroup 
-        options={airQualityMeasure === 'PM2.5' ? pm25ThresholdOptions : aqhiThresholdOptions}
-        bind:selectedValue={threshold}
-        onSelect={thresholdSelect}
-        label="Select threshold level:"
-    />
+        <ButtonGroup 
+            options={airQualityOptions}
+            bind:selectedValue={airQualityMeasure}
+            onSelect={airQualityMeasureSelect}
+            label="Select an air quality measure:"
+        />
 
-    <LegendGraduatedBreakpoints 
-        colors={GRADUATED_COLORS}
-        breakpoints={AIR_MEASURE_NUM_DAYS_BREAKS[airQualityMeasure]}
-        title="Number of days per year"
-        showNA={true}
-        rangeLabels={true}
-    />
+        <ButtonGroup 
+            options={airQualityMeasure === 'PM2.5' ? pm25ThresholdOptions : aqhiThresholdOptions}
+            bind:selectedValue={threshold}
+            onSelect={thresholdSelect}
+            label="Select threshold level:"
+        />
 
-    <Heatmap 
-        data={currentAirQualityData}
-        colors={GRADUATED_COLORS}
-        breakpoints={AIR_MEASURE_NUM_DAYS_BREAKS[airQualityMeasure]}
-    />
+        <LegendGraduatedBreakpoints 
+            colors={GRADUATED_COLORS}
+            breakpoints={AIR_MEASURE_NUM_DAYS_BREAKS[airQualityMeasure]}
+            title="Number of days per year"
+            showNA={true}
+            rangeLabels={true}
+        />
+
+        <Heatmap 
+            data={currentAirQualityData}
+            colors={GRADUATED_COLORS}
+            breakpoints={AIR_MEASURE_NUM_DAYS_BREAKS[airQualityMeasure]}
+        />
+    </div>
 </div>
