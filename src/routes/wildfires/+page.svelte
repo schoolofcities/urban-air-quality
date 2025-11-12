@@ -88,24 +88,26 @@
 		/>
 
 		<p>
-			Clean air is a basic part of a decent life in the city: it makes going outside pleasant as much as safe. The smoky smell of a barbeque might be nice before a summertime dinner, but less so when it <a href="https://www.cbc.ca/news/canada/toronto/air-quality-statement-in-effect-for-toronto-gta-1.7600597" target="_blank">coats your city</a> in noxious fumes. Bad air makes for <a href="https://www.canada.ca/en/environment-climate-change/campaigns/canadian-environment-week/clean-air-day/health-impacts-air-pollution.html" target="_blank">more trips to the hospital</a>, and a <a href="https://schoolofcities.github.io/air-pollution-and-premature-mortality" target="_blank">faster trek to the grave</a>. 
+			Clean air is a basic part of a decent life in a city: it makes going outside pleasant as much as safe. The smoky smell of a barbeque might be nice before a summertime dinner, but less so when it <a href="https://www.cbc.ca/news/canada/toronto/air-quality-statement-in-effect-for-toronto-gta-1.7600597" target="_blank">coats your city</a> in noxious fumes. Bad air makes for  <a href="https://www.canada.ca/en/environment-climate-change/campaigns/canadian-environment-week/clean-air-day/health-impacts-air-pollution.html" target="_blank">more trips to the hospital</a>, and <a href="https://schoolofcities.github.io/air-pollution-and-premature-mortality" target="_blank">higher death rates</a>. 
 		</p>
 
 		<p>
-			Across Canada, recent years have seen a resurgence in poor air quality, and growing wildfires are the biggest culprit. 2025 was the <a href="https://www.theguardian.com/world/2025/aug/11/canada-wildfire-season" target="_blank">second worst wildfire</a> season on record, just two years after the record-shattering 2023 wildfire season. Man-made <a href="https://climateinstitute.ca/news/fact-sheet-wildfires/" target="_blank">climate</a> <a href="https://www.nature.com/articles/s41467-024-51154-7" target="_blank">change</a> is to thank—it makes for more extreme fire weather conditions, hotter and windier summers, and more erratic rainfall. 
+			Across Canada, recent years have seen a resurgence in poor air quality, and growing wildfires are the biggest culprit. 2025 was the <a href="https://www.theguardian.com/world/2025/aug/11/canada-wildfire-season" target="_blank">second worst wildfire season</a> on record, just two years after the record-shattering 2023 wildfire season. Human-made <a href="https://climateinstitute.ca/news/fact-sheet-wildfires/" target="_blank">climate</a> <a href="https://www.nature.com/articles/s41467-024-51154-7" target="_blank">change</a> is to thank – it makes for more extreme fire weather conditions, hotter and windier summers, and more erratic rainfall. 
 		</p>
 
 		<p>
-			Below, we've plotted out the number of days that various cities across Canada were exposed to harmful levels of pollution, from 2005 to 2025, based on Canada's <a href="https://www.canada.ca/en/environment-climate-change/services/air-quality-health-index.html" target="_blank"> Air Quality Health Index (AQHI)</a>. The AQHI ranges from 1 to 11, where at 'High' and 'Very High' levels at risk populations are recommended to reduce or avoid outdoor activities.
+			Below, we've plotted out the number of days that various cities across Canada were exposed to harmful levels of pollution, from 2005 to 2025, based on Canada's <a href="https://www.canada.ca/en/environment-climate-change/services/air-quality-health-index.html" target="_blank"> Air Quality Health Index (AQHI)</a>. The AQHI ranges from 1 to 11, where at 'High' and 'Very High' levels at-risk populations are recommended to reduce or avoid outdoor activities.
 		</p>
+
 		<AQHIBar/>
+
 		<p>
 			The AQHI is a combined metric based on three different pollutants:
 		</p>
 		<ul class="compact-list">
-			<li><strong>PM<sub>2.5</sub>:</strong> Tiny pollution particles from things like wildfire smoke or traffic that can get deep into your lungs, like the haze from a nearby fire.</li>
-			<li><strong>NO<sub>2</sub>:</strong> A gas mainly from vehicles or industry that irritates the lungs, like the sharp smell near a busy road.</li>
-			<li><strong>O<sub>3</sub>:</strong> Formed when other pollutants mix with sunlight like on a smoggy summer day, it can make breathing harder.</li>
+			<li><strong>PM<sub>2.5</sub>:</strong> Tiny pollution particles from things like wildfire smoke or traffic that can get deep into your lungs.</li>
+			<li><strong>NO<sub>2</sub>:</strong> A gas mainly from vehicles or industry that irritates the lungs.</li>
+			<li><strong>O<sub>3</sub>:</strong> Formed when other pollutants mix with sunlight, it can make breathing harder.</li>
 		</ul>
 
 		<p>
@@ -113,29 +115,25 @@
 		</p>
 		<ul class="compact-list">
 			<li><strong>AQHI:</strong> Computed using the relative amounts of harmful pollutants in the air over any 3-hour period.</li>
-			<li><strong>AQHI+:</strong> An extension of AQHI, sensitive to extreme events, like a passing smoke plume, or flaring industrial refinery.</li>
+			<li><strong>AQHI+:</strong> An extension of AQHI sensitive to extreme events.</li>
 		</ul>
 
 		<DisplayNumDays />
 
 		<p>
-			For years, <a href="https://news.ontario.ca/en/release/9974/improving-air-quality-in-the-southwest-greater-toronto-area" target="_blank">deliberate attempts</a> to improve air quality had been working, especially along Ontario's industrial corridor. The new wave of bad air is sweeping across cities in the Prairies, with increasing severity. But it isn't stopping there: slowly, but surely, it's making a comeback in Eastern Canada as well.
+			For years, <a href="https://news.ontario.ca/en/release/9974/improving-air-quality-in-the-southwest-greater-toronto-area" target="_blank">deliberate attempts</a> to improve air quality had been working, especially along Ontario's industrial corridor. The new wave of bad air is sweeping across cities in the Prairies, with increasing severity. But it isn't stopping there: slowly but surely, it's making a comeback in Eastern Canada as well.
 		</p>
 
 		<DisplayCityRankings />
 
 		<p>
-			When we see poor air quality, where does it come from? In our analysis below, PM<sub>2.5</sub> is increasingly responsible. It's the pollutant released by wildfires after all, and these last three years have been the worst three wildfire seasons <a href="https://www.cbc.ca/newsinteractives/features/wildfires-tracker-canada" target="_blank">on record</a>.
+			When we see poor air quality, where does it come from? In our analysis below, PM<sub>2.5</sub> is increasingly responsible. This is not surprising, as it's the pollutant released by wildfires and the last three years have been the worst three wildfire seasons <a href="https://www.cbc.ca/newsinteractives/features/wildfires-tracker-canada" target="_blank">on record</a>. 
 		</p>
 
 		<DisplayPctPollutant />
 		
 		<p>
-			For a time, it seemed that poor air quality was set to <a href="https://www.cbc.ca/news/science/2023-wildfires-air-pollution-1.7619089" target="_blank">become a thing of the past</a> in Canadian cities; a health issue which had received successful treatment. And yet nowadays, it looks like it's never been worse.
-		</p>
-
-		<p>
-			In a time of nation building projects, especially ones that look at pipelines and extractive industry, what will be left to make the air in our cities clean? No new infrastructure projects are going to let our lungs make use of diesel and smoke after all. 
+			For a time, it seemed that poor air quality was set to <a href="https://www.cbc.ca/news/science/2023-wildfires-air-pollution-1.7619089" target="_blank">become a thing of the past</a> in Canadian cities – a health issue that had received successful treatment. And yet, nowadays, it looks like it's never been worse. In a time of nation-building projects, what will be done to make the air in our cities clean?
 		</p>
 
 		<div class="details">
