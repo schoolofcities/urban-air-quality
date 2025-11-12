@@ -27,14 +27,14 @@
 	<meta property="og:description" content="Analysis of worsening urban air quality in Canadian cities" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://schoolofcities.github.io/urban-air-quality/wildfires" />
-	<meta property="og:image" content="https://raw.githubusercontent.com/schoolofcities/tariffs/main/static/web-card.png" />
+	<meta property="og:image" content="https://raw.githubusercontent.com/schoolofcities/urban-air-quality/main/static/web-card.png" />
 	<meta property="og:locale" content="en_CA">
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Wildfires and Air Quality" />
 	<meta name="twitter:description" content="Analysis of worsening urban air quality in Canadian cities" />
 	<meta name="twitter:site" content="https://schoolofcities.github.io/urban-air-quality/wildfires/" />
-	<meta name="twitter:image" content="https://raw.githubusercontent.com/schoolofcities/tariffs/main/static/web-card.png" /> 
+	<meta name="twitter:image" content="https://raw.githubusercontent.com/schoolofcities/urban-air-quality/main/static/web-card.png" /> 
 </svelte:head>
 
 <main>
